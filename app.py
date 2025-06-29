@@ -10,8 +10,8 @@ app = FastAPI()
 # Permitir cualquier origen (modo desarrollo)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://medex.ar","https://medex.ar"],
-    allow_credentials=False,
+allow_origin_regex=r"https?://(www\\.)?medex\\.ar",    
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
