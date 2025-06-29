@@ -1,0 +1,34 @@
+{
+  "estudios": [
+    {
+      "nombre": "GZQA",
+      "descripcion": "Uso de RETATRUTIDA (GLP-1R y el GCGR) para control glucemico y disminución de aumento de peso en pacientes con uso de insulina glargina",
+      "criterios_texto": "Incluye pacientes con diabetes tipo 2 con hemoglobina glicosilada entre 7 y 10.5%, con filtrado glomerular menos a 60ml/min, en tratamiento con insulina glargina"
+    },
+    {
+      "nombre": "BAX-DUO (PACIFIC)",
+      "descripcion": "Uso de BAXDROSTAT/DAPAGLIFOZINA VS DAPAGLIFOZINA en pacientes con hipertensión y enfermedad renal crónica",
+      "criterios_texto": "Incluye pacientes con antecedentes de hipertension en tratamiento con IECA o ARA II, que tengan un filtrado glomerular entre 30 y 60 ml/min, con rac mayor a 30 mg y menor a 500mg. Excluye pacientes con hemoglobina glicosilada mayor a 10.5% o que utilicen diuretico ahorrador de potasio."
+    },
+    {
+      "nombre": "LIBREXIA SCA",
+      "descripcion": "Uso de anticoagulante directo MILVEXIAN ademas de terapia antiagregante standard en pacientes con síndrome coronario agudo",
+      "criterios_texto": "Incluye pacientes mayores a 18 años con diagnostico de IAM (troponinas positivas) hace menos de 7 dias, con al menos dos factores de riesgo: edad mayor o igual a 65 años, diabetes, antecedentes de iam previo y/o enfermedad coronaria de multiples vasos"
+    },
+       {
+      "nombre": "GZBO",
+      "descripcion": "Uso de RETATRUTIDA (acción receptor GIP, GLP-1 y glucagon) en pacientes obesos con nefropatía",
+      "criterios_texto": "Incluye pacientes con edad mayor o igual a 45 años con IMC mayor a 27kg/m2, enfermedad renal cronica con filtrado glomerular mayor a 30ml y rac mayor a 30mg" 
+    },
+        {
+      "nombre": "HERMES",
+      "descripcion": "Uso de ZILTIVEKIMAB para disminuir inflamación en pacientes con insuficiencia cardiaca",
+      "criterios_texto": "Incluye pacientes con insuficiencia cardiaca clase funcional II-IV con proteina c reactiva mauor a 2 y proBnp mayor a 300" 
+    },
+         {
+      "nombre": "BAX-DUO (PREVENT)",
+      "descripcion": "Uso de BAXDROSTAT/DAPAGLIFOZINA VS DAPAGLIFOZINA en pacientes con hipertensión y enfermedad renal crónica",
+      "criterios_texto": "Incluye pacientes con hipertension arterial, con filtrado glomerular entre 30 y 90ml, rac entre 500 y 5000. Se excluyen pacientes con hemoglobina glicosilada mayor a 10.5% o que usen diureticos ahorradores de potasio" 
+    }
+  ]
+}
