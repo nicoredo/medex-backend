@@ -15,9 +15,13 @@ allow_origin_regex=r"https?://(www\\.)?medex\\.ar",
     allow_methods=["*"],
     allow_headers=["*"],
 )
+@app.get("/")
+def home():
+    return {"status": "ok"}
 
 MISTRAL_API_KEY = "HmK9kErc0JZUwZcdeksBJujc7lF5U4iz"
 MISTRAL_ENDPOINT = "https://api.mistral.ai/v1/chat/completions"
+
 
 @app.post("/evaluar_ia")
 async def evaluar_ia(request: Request):
