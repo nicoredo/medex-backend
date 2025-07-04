@@ -3,7 +3,7 @@
     {
       "nombre": "GZQA",
       "descripcion": "Uso de RETATRUTIDA (GLP-1R y el GCGR) para control glucemico y disminución de aumento de peso en pacientes con uso de insulina glargina",
-      "criterios_texto": "Incluye pacientes con diabetes tipo 2 con hemoglobina glicosilada entre 7 y 10.5%, con filtrado glomerular menos a 60ml/min, en tratamiento con insulina glargina"
+      "criterios_texto": "Incluye pacientes con diabetes tipo 2 medicados con insulina glargina y con hemoglobina glicosilada entre 7 y 10.5% + filtrado glomerular menos a 60ml/min"
     },
     {
       "nombre": "BAX-DUO (PACIFIC)",
@@ -12,8 +12,8 @@
     },
     {
       "nombre": "LIBREXIA SCA",
-      "descripcion": "Uso de anticoagulante directo MILVEXIAN ademas de terapia antiagregante standard en pacientes con síndrome coronario agudo",
-      "criterios_texto": "Incluye pacientes mayores a 18 años con diagnostico de IAM (troponinas positivas) hace menos de 7 dias, con al menos dos factores de riesgo: edad mayor o igual a 65 años, diabetes, antecedentes de iam previo y/o enfermedad coronaria de multiples vasos"
+      "descripcion": "Uso de anticoagulante directo MILVEXIAN ademas de terapia antiagregante standard en pacientes con síndrome coronario agudo hace menos de 7 dias",
+      "criterios_texto": "Incluye pacientes mayores a 18 años con diagnostico de SCA/IAM (troponinas positivas) hace menos de 7 dias, con al menos dos factores de riesgo: edad mayor o igual a 65 años, diabetes, antecedentes de iam previo y/o enfermedad coronaria de multiples vasos"
     },
        {
       "nombre": "GZBO",
