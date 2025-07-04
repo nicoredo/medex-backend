@@ -3,32 +3,32 @@
     {
       "nombre": "GZQA",
       "descripcion": "Uso de RETATRUTIDA (GLP-1R y el GCGR) para control glucemico y disminución de aumento de peso en pacientes con uso de insulina glargina",
-      "criterios_texto": "Incluye pacientes con diabetes tipo 2 medicados con insulina glargina y con hemoglobina glicosilada entre 7 y 10.5% + filtrado glomerular menos a 60ml/min"
+      "criterios_texto": "Criterios de inclusion: diabetes tipo 2 + medicado con insulina glargina + hemoglobina glicosilada entre 7 y 10.5% + filtrado glomerular menor a 60ml/min"
     },
     {
       "nombre": "BAX-DUO (PACIFIC)",
       "descripcion": "Uso de BAXDROSTAT/DAPAGLIFOZINA VS DAPAGLIFOZINA en pacientes con hipertensión y enfermedad renal crónica",
-      "criterios_texto": "Incluye pacientes con antecedentes de hipertension en tratamiento con IECA o ARA II, que tengan un filtrado glomerular entre 30 y 60 ml/min, con rac mayor a 30 mg y menor a 500mg. Excluye pacientes con hemoglobina glicosilada mayor a 10.5% o que utilicen diuretico ahorrador de potasio."
+      "criterios_texto": "Criterios de exclusion: pacientes con hemoglobina glicosilada mayor a 10.5% o que utilicen diuretico ahorrador de potasio. Criterios de inclusion: hipertension arteiral en tratamiento con IECA o ARA II + filtrado glomerular entre 30 y 60 ml/min + rac mayor a 30 mg y menor a 500mg."
     },
     {
       "nombre": "LIBREXIA SCA",
       "descripcion": "Uso de anticoagulante directo MILVEXIAN ademas de terapia antiagregante standard en pacientes con síndrome coronario agudo hace menos de 7 dias",
-      "criterios_texto": "Incluye pacientes mayores a 18 años con diagnostico de SCA/IAM (troponinas positivas) hace menos de 7 dias, con al menos dos factores de riesgo: edad mayor o igual a 65 años, diabetes, antecedentes de iam previo y/o enfermedad coronaria de multiples vasos"
+      "criterios_texto": "Criterios de inclusion: SCA/IAM (troponinas positivas) hace menos de 7 dias de antiguedad + al menos dos factores de riesgo: edad mayor o igual a 65 años y/o diabetes y/o antecedentes de iam previo y/o enfermedad coronaria de multiples vasos"
     },
        {
       "nombre": "GZBO",
       "descripcion": "Uso de RETATRUTIDA (acción receptor GIP, GLP-1 y glucagon) en pacientes obesos con nefropatía",
-      "criterios_texto": "Incluye pacientes con edad mayor o igual a 45 años con IMC mayor a 27kg/m2, enfermedad renal cronica con filtrado glomerular mayor a 30ml y rac mayor a 30mg" 
+      "criterios_texto": "Criterios de inclusion: edad mayor o igual a 45 años + obesidad con IMC mayor a 27kg/m2 + enfermedad renal cronica + filtrado glomerular mayor a 30ml + rac mayor a 30mg" 
     },
         {
       "nombre": "HERMES",
       "descripcion": "Uso de ZILTIVEKIMAB para disminuir inflamación en pacientes con insuficiencia cardiaca",
-      "criterios_texto": "Incluye pacientes con insuficiencia cardiaca clase funcional II-IV con proteina c reactiva mauor a 2 y proBnp mayor a 300" 
+      "criterios_texto": "Criterios de inclusion: insuficiencia cardiaca clase funcional II-IV + proteina c reactiva mauor a 2 + proBnp mayor a 300" 
     },
          {
       "nombre": "BAX-DUO (PREVENT)",
       "descripcion": "Uso de BAXDROSTAT/DAPAGLIFOZINA VS DAPAGLIFOZINA en pacientes con hipertensión y enfermedad renal crónica",
-      "criterios_texto": "Incluye pacientes con hipertension arterial, con filtrado glomerular entre 30 y 90ml, rac entre 500 y 5000. Se excluyen pacientes con hemoglobina glicosilada mayor a 10.5% o que usen diureticos ahorradores de potasio" 
+      "criterios_texto": "Criterios de inclusion: hipertension arterial + filtrado glomerular entre 30 y 90ml + rac entre 500 y 5000. Criterios de exclusion: hemoglobina glicosilada mayor a 10.5% o que usen diureticos ahorradores de potasio" 
     }
   ]
 }
