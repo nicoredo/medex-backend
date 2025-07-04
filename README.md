@@ -1,2 +1,2 @@
 # medex-backend
-backend de medex via mistral api
+backend de medex via OpenRouter
