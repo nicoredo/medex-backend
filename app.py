@@ -60,27 +60,36 @@ def armar_prompt(datos, estudios):
     )
 
     prompt_final = f"""
-Sos un evaluador clínico experto.
+Sos un evaluador clínico experto. Tu tarea es determinar si un paciente puede ser incluido en alguno de los siguientes estudios de investigación clínica.
 
-{resumen_clinico}
+---
 
-Tu tarea es evaluar si este paciente califica para estudios médicos clínicos.
-
-🧠 Instrucciones:
-- Devolvé solo los estudios que cumple total o parcialmente (al menos 2 criterios)
-- No incluyas estudios excluidos
-- El formato de salida debe ser **HTML limpio** como el siguiente:
+🧠 **Instrucciones estrictas**:
+- Analizá los criterios de inclusión y exclusión **palabra por palabra**. No generalices ni asumas.
+- Solo incluí estudios si **se cumple cada criterio obligatorio**.
+- Si falta algún dato obligatorio (ej: HbA1c, FG, RAC, PCR, clase funcional), marcá el estudio como **pendiente (⚠️)** y especificá qué falta.
+- No se permite suposición implícita (“probable”, “posiblemente”). Si no está explícito, no se cumple.
+- Podés inferir relaciones clínicas básicas, como:
+    - FEVI < 50% → insuficiencia cardíaca probable
+    - si toma enalapril o losartán → IECA/ARA II
+    - si hay múltiples ATC → enfermedad coronaria
+- Devolvé los resultados en formato HTML con bloques `<div>` y listas `<ul>`, como este ejemplo:
 
 <div class="resultado-estudio">
-  <strong>✅ NOMBRE DEL ESTUDIO</strong>
+  <strong>✅ LIBREXIA SCA</strong>
   <ul>
-    <li>Motivo 1</li>
-    <li>Motivo 2</li>
-    ...
+    <li>SCA con IAM hace menos de 7 días</li>
+    <li>Edad ≥ 65 y DBT</li>
   </ul>
 </div>
 
-Usá `✅` para "Cumple" y `⚠️` para "Cumple parcialmente".
+Usá `✅` si cumple todos los criterios, `⚠️` si falta algún dato importante y **omití completamente los estudios que claramente no aplica** o están excluidos.
+
+---
+
+📄 Datos del paciente:
+
+{resumen_clinico}
 
 ---
 
