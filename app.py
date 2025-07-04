@@ -42,23 +42,17 @@ async def evaluar_ia(request: Request):
 
 
 def armar_prompt(datos, estudios):
-    def format_list(label, items):
-        return f"- {label}: {', '.join(items) if items else 'No informado'}"
+    edad = str(datos.get("edad", "no informado"))
+    antecedentes = ", ".join(datos.get("antecedentes", [])) or "sin antecedentes relevantes"
+    factores = ", ".join(datos.get("riesgo", [])) or "sin factores informados"
+    medicacion = ", ".join(datos.get("medicacion", [])) or "ninguna medicación registrada"
+    laboratorio = ", ".join(f"{k}: {v}" for k, v in datos.get("laboratorio", {}).items()) or "sin estudios complementarios"
 
-    def format_lab(lab):
-        if not lab:
-            return "- Estudios complementarios: No informado"
-        return "- Estudios complementarios:\n  " + "\n  ".join(f"{k}: {v}" for k, v in lab.items())
-
-    resumen = f"""
-📄 Datos del paciente:
-
-{format_list("Edad", [str(datos.get("edad"))] if datos.get("edad") else [])}
-{format_list("Antecedentes", datos.get("antecedentes", []))}
-{format_list("Factores de riesgo", datos.get("riesgo", []))}
-{format_list("Medicación", datos.get("medicacion", []))}
-{format_lab(datos.get("laboratorio", {}))}
-""".strip()
+    resumen_clinico = (
+        f"Paciente de {edad} años, con antecedentes de {antecedentes}, "
+        f"factores de riesgo cardiovascular: {factores}, "
+        f"actualmente medicado con {medicacion}, y presenta los siguientes estudios complementarios: {laboratorio}."
+    )
 
     criterios_txt = "\n\n".join(
         f"{i+1}. {e['nombre']}: {e['descripcion']}\nCriterios: {e['criterios_texto']}"
@@ -66,23 +60,35 @@ def armar_prompt(datos, estudios):
     )
 
     prompt_final = f"""
-Sos un asistente clínico experto.
-Tu tarea es evaluar si un paciente califica para un estudio médico específico basado en sus datos clínicos (edad, antecedentes, factores de riesgo, medicacion y estudios complementarios).
-- Responde con un resumen claro, solo menciona los estudios que no están excluidos, y que tienen al menos dos criterios cumplidos.
-- Formato de salida: HTML simple con "Cumple" o "Cumple parcial" íconos (✅, ⚠️), título del estudio y breve observación de datos faltantes en los parciales.
-- No incluyas información adicional, solo el resumen de los estudios necesarios.
+Sos un evaluador clínico experto.
+
+{resumen_clinico}
+
+Tu tarea es evaluar si este paciente califica para estudios médicos clínicos.
+
+🧠 Instrucciones:
+- Devolvé solo los estudios que cumple total o parcialmente (al menos 2 criterios)
+- No incluyas estudios excluidos
+- El formato de salida debe ser **HTML limpio** como el siguiente:
+
+<div class="resultado-estudio">
+  <strong>✅ NOMBRE DEL ESTUDIO</strong>
+  <ul>
+    <li>Motivo 1</li>
+    <li>Motivo 2</li>
+    ...
+  </ul>
+</div>
+
+Usá `✅` para "Cumple" y `⚠️` para "Cumple parcialmente".
 
 ---
 
-{resumen}
-
----
-
-📚 Estudios disponibles:
+📚 Estudios clínicos disponibles:
 {criterios_txt}
-"""
+""".strip()
 
-    return prompt_final.strip()
+    return prompt_final
 
 
 async def consultar_openrouter(prompt):
