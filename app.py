@@ -87,15 +87,13 @@ Tu tarea es evaluar si un paciente califica para un estudio médico específico 
 
 async def consultar_openrouter(prompt):
     try:
-
         OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-headers = {
-    "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-    "HTTP-Referer": "http://localhost",
-    "Content-Type": "application/json"
-}
-
+        headers = {
+            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+            "HTTP-Referer": "http://localhost",
+            "Content-Type": "application/json"
+        }
 
         body = {
             "model": "openai/gpt-4o",
