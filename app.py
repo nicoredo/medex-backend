@@ -60,21 +60,8 @@ def armar_prompt(datos, estudios):
     )
 
     prompt_final = f"""
-Sos un evaluador clínico experto. Tu tarea es determinar si un paciente puede ser incluido en alguno de los siguientes estudios de investigación clínica.
-
----
-
-🧠 **Instrucciones estrictas**:
-- No menciones estudios que cumplan criterios de exclusion
-- De los estudios que cumpla parcialmente, menciona cual es el faltante o que debe el medico ampliar
-- Para que cumpla todos los criterios deben ser exactos
-- Cita la descripcion del estudio que cumple en forma completa
-- Si falta algún dato obligatorio (ej: HbA1c, FG, RAC, PCR, clase funcional), marcá el estudio como **pendiente (⚠️)** y especificá qué falta.
-- No se permite suposición implícita (“probable”, “posiblemente”)
-- Podés inferir relaciones clínicas básicas, como:
-    - FEVI < 50% → insuficiencia cardíaca probable
-    - si toma enalapril o losartán → IECA/ARA II, tiene hipertension
-    - si hay múltiples ATC → enfermedad coronaria
+Compara los datos recibidos con los criterios de estudios y devolve los que cumplen total o parcialmente dichos criterios. De manera concisa.
+🧠- Si falta algún dato obligatorio (ej: HbA1c, FG, RAC, PCR, clase funcional), marcá el estudio como **pendiente (⚠️)** y especificá qué falta.
 Usá `✅` si cumple todos los criterios, `⚠️` si falta algún dato importante
 
 ---
