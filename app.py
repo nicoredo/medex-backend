@@ -42,17 +42,20 @@ async def evaluar_ia(request: Request):
 
 
 def armar_prompt(datos, estudios):
-    edad = str(datos.get("edad", "no informado"))
-    antecedentes = ", ".join(datos.get("antecedentes", [])) or "sin antecedentes relevantes"
-    factores = ", ".join(datos.get("riesgo", [])) or "sin factores informados"
-    medicacion = ", ".join(datos.get("medicacion", [])) or "ninguna medicación registrada"
-    laboratorio = ", ".join(f"{k}: {v}" for k, v in datos.get("laboratorio", {}).items()) or "sin estudios complementarios"
+    if "texto_hc" in datos:
+        resumen_clinico = datos["texto_hc"]
+    else:
+        edad = str(datos.get("edad", "no informado"))
+        antecedentes = ", ".join(datos.get("antecedentes", [])) or "sin antecedentes relevantes"
+        factores = ", ".join(datos.get("riesgo", [])) or "sin factores informados"
+        medicacion = ", ".join(datos.get("medicacion", [])) or "ninguna medicación registrada"
+        laboratorio = ", ".join(f"{k}: {v}" for k, v in datos.get("laboratorio", {}).items()) or "sin estudios complementarios"
 
-    resumen_clinico = (
-        f"Paciente de {edad} años, con antecedentes de {antecedentes}, "
-        f"factores de riesgo cardiovascular: {factores}, "
-        f"actualmente medicado con {medicacion}, y presenta los siguientes estudios complementarios: {laboratorio}."
-    )
+        resumen_clinico = (
+            f"Paciente de {edad} años, con antecedentes de {antecedentes}, "
+            f"factores de riesgo cardiovascular: {factores}, "
+            f"actualmente medicado con {medicacion}, y presenta los siguientes estudios complementarios: {laboratorio}."
+        )
 
     criterios_txt = "\n\n".join(
         f"{i+1}. {e['nombre']}: {e['descripcion']}\nCriterios: {e['criterios_texto']}"
@@ -76,6 +79,7 @@ Usá `✅` si cumple todos los criterios, `⚠️` si falta algún dato importan
 """.strip()
 
     return prompt_final
+
 
 
 async def consultar_openrouter(prompt):
