@@ -63,8 +63,8 @@ def armar_prompt(datos, estudios):
     )
 
     prompt_final = f"""
-Compara los datos recibidos del paciente con los criterios de inclusion de los estudios, y devolve como resultado solo los estudios que se cumplen criterios totales o que tienen un solo faltante.
-Usá `✅` si cumple todos los criterios, `⚠️` si falta algún dato importante. El cumple todos los criterios agrega la descripcion del estudio.
+Compara los datos recibidos del paciente con los criterios de inclusion de los estudios, y devolve como resultado solamente los estudios en que se cumplen todos los criterios o que solo falta uno.
+Usá `✅` si cumple todos los criterios, `⚠️` si falta un criterio. Respuesta concreta y precisa en forma de lista por estudio.
 
 ---
 
