@@ -60,9 +60,8 @@ def armar_prompt(datos, estudios):
     )
 
     prompt_final = f"""
-Compara los datos recibidos con los criterios de estudios y devolve los que cumplen total o parcialmente dichos criterios. De manera concisa.
-🧠- Si falta algún dato obligatorio (ej: HbA1c, FG, RAC, PCR, clase funcional), marcá el estudio como **pendiente (⚠️)** y especificá qué falta.
-Usá `✅` si cumple todos los criterios, `⚠️` si falta algún dato importante
+Compara los datos recibidos del paciente con los criterios de inclusion de los estudios, y devolve como resultado los estudios que se cumplen criterios totales o parcial.
+Usá `✅` si cumple todos los criterios, `⚠️` si falta algún dato importante. El cumple todos los criterios agrega la descripcion del estudio.
 
 ---
 
