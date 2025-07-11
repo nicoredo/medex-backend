@@ -140,10 +140,10 @@ async def consultar_openrouter(prompt):
         }
 
         body = {
-            "model": "deepseek/deepseek-r1-0528:free",
+            "model": "mistralai/mistral-7b-instruct",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.0,
-            "max_tokens": 1000
+            "max_tokens": 2000
         }
 
         async with httpx.AsyncClient() as client:
