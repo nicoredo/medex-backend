@@ -140,7 +140,7 @@ async def consultar_openrouter(prompt):
         }
 
         body = {
-            "model": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+            "model": "perplexity/pplx-70b-online",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.0,
             "max_tokens": 1000
