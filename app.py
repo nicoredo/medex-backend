@@ -70,22 +70,46 @@ def obtener_criterios():
 
 
 def armar_prompt(texto_hc, estudios):
+    def formatear_criterios(est):
+        criterios = est["criterios"]
+        texto = "Criterios de inclusión:\n"
+        for c in criterios.get("inclusion", []):
+            if c["tipo"] == "grupo-condicional":
+                texto += f"- {c['condicion']}:\n"
+                for opc in c["opciones"]:
+                    texto += f"    • {opc['condicion']}\n"
+            else:
+                texto += f"- {c['condicion']}\n"
+
+        if criterios.get("exclusion"):
+            texto += "\nCriterios de exclusión:\n"
+            for c in criterios["exclusion"]:
+                texto += f"- {c['condicion']}\n"
+        return texto.strip()
+
     criterios_txt = "\n\n".join(
-        f"{i+1}. {e['nombre']}: {e['descripcion']}\nCriterios: {e['criterios_texto']}"
+        f"{i+1}. {e['nombre']}: {e['descripcion']}\n{formatear_criterios(e)}"
         for i, e in enumerate(estudios)
     )
 
     prompt_final = f"""
-A partir del siguiente texto clínico del paciente, devolveme únicamente los estudios que cumplan estrictamente con todos los criterios, o aquellos que cumplen parcialmente pero con una única observación relevante.
+Sos un asistente clínico experto. Evaluá los siguientes estudios clínicos y decidí si un paciente califica.
 
-La salida debe ser un array JSON. Por cada estudio incluí:
-- nombre (string)
-- descripcion (string)
-- estado (✅ si cumple totalmente, ⚠️ si cumple parcialmente, ❌ si no aplica — no devolver estos últimos)
-- detalle (explicación clínica del motivo)
+### Instrucciones:
+- Analizá los criterios de inclusión (todos deben cumplirse) y exclusión (si uno se cumple, queda excluido).
+- Los criterios pueden incluir condiciones numéricas, diagnósticos, medicación o grupos condicionales (por ejemplo, al menos 2 de una lista).
+- Respondé solamente si el paciente cumple totalmente (✅) o parcialmente (⚠️). No incluyas estudios no aplicables (❌).
+- Si un dato no está mencionado en el texto clínico, asumí que NO está presente.
+- Devolvé un array JSON con los siguientes campos por estudio:
 
-No supongas información que no esté explícita en el texto clínico. Si un criterio no está mencionado, consideralo como no cumplido.
-
+```json
+[
+  {{
+    "nombre": "Nombre del estudio",
+    "estado": "✅ / ⚠️",
+    "detalle": "Motivo del cumplimiento parcial o total"
+  }}
+]
 ---
 
 Texto clínico del paciente:
