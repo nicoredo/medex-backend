@@ -62,10 +62,11 @@ def obtener_criterios():
     try:
         with open("criterios_estudios_textual.json", "r", encoding="utf-8") as f:
             data = json.load(f)
-        return JSONResponse(content=data)
+        return {"estudios": data["estudios"]}
     except Exception as e:
         print("❌ ERROR EN /criterios:", e)
         return {"error": str(e)}
+
 
 
 def armar_prompt(texto_hc, estudios):
