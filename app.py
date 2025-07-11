@@ -140,7 +140,7 @@ async def consultar_openrouter(prompt):
         }
 
         body = {
-            "model": "perplexity/pplx-70b-online",
+            "model": "deepseek/deepseek-r1-0528:free",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.0,
             "max_tokens": 1000
