@@ -31,6 +31,8 @@ async def evaluar_ia(request: Request):
 
         with open("criterios_estudios_textual.json", "r", encoding="utf-8") as f:
             criterios = json.load(f)["estudios"]
+            print("📂 Archivo de criterios cargado exitosamente")
+
 
         prompt = armar_prompt(texto_hc, criterios)
         print("📤 Enviando prompt estructurado a OpenRouter...")
