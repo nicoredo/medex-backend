@@ -106,7 +106,8 @@ Sos un asistente clínico experto. Evaluá los siguientes estudios clínicos y d
 [
   {{
     "nombre": "Nombre del estudio",
-    "estado": "✅ / ⚠️",
+    "descripcion": "",
+    "estado": "✅ / ⚠️",    
     "detalle": "Motivo del cumplimiento parcial o total"
   }}
 ]
