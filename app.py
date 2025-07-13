@@ -95,7 +95,7 @@ Sos un evaluador de criterios de seleccion de pacientes para estudios de investi
 
 ### Instrucciones:
 - Analizá los criterios de inclusión de los estudios (Excluido = si tiene algun criterio de exclusion; Cumple totalmente = todos in excepcion deben cumplirse; Cumple parcial = le falta un criterio para cumplir totalmente).
-- Los criterios pueden incluir antecedentes, medicacion, o valores de laboratorio.
+- Los criterios pueden incluir antecedentes, medicacion. Valores de laboratorio tiene que estrictamente estar en los rangos de los criterios, en caso que no comprendas el valor o las unidades, pedile ampliar con informacion adicional.
 - Respondé solamente si el paciente cumple totalmente (✅) o parcialmente (⚠️). No incluyas estudios no aplicables (❌).
 - Si un dato no está mencionado en el texto clínico, asumí que NO está presente, es estricto sin alucinaciones.
 - Devolvé un array JSON con los siguientes campos por estudio:
@@ -104,7 +104,6 @@ Sos un evaluador de criterios de seleccion de pacientes para estudios de investi
 [
   {{
     "nombre": "Nombre del estudio",
-    "descripcion": "",
     "estado": "✅ / ⚠️",    
     "detalle": "Motivo del cumplimiento parcial o total"
   }}
