@@ -91,13 +91,13 @@ def armar_prompt(texto_hc, estudios):
     )
 
     prompt_final = f"""
-Sos un asistente clínico experto. Evaluá los siguientes estudios clínicos y decidí si un paciente califica.
+Sos un evaluador de criterios de seleccion de pacientes para estudios de investigacion, interpreta el caso presentado.
 
 ### Instrucciones:
-- Analizá los criterios de inclusión (todos deben cumplirse) y exclusión (si uno se cumple, queda excluido).
-- Los criterios pueden incluir condiciones numéricas, diagnósticos, medicación o grupos condicionales (por ejemplo, al menos 2 de una lista).
+- Analizá los criterios de inclusión de los estudios (Excluido = si tiene algun criterio de exclusion; Cumple totalmente = todos in excepcion deben cumplirse; Cumple parcial = le falta un criterio para cumplir totalmente).
+- Los criterios pueden incluir antecedentes, medicacion, o valores de laboratorio.
 - Respondé solamente si el paciente cumple totalmente (✅) o parcialmente (⚠️). No incluyas estudios no aplicables (❌).
-- Si un dato no está mencionado en el texto clínico, asumí que NO está presente.
+- Si un dato no está mencionado en el texto clínico, asumí que NO está presente, es estricto sin alucinaciones.
 - Devolvé un array JSON con los siguientes campos por estudio:
 
 ```json
