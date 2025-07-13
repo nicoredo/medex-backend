@@ -136,7 +136,7 @@ async def consultar_openrouter(prompt):
         }
 
         body = {
-            "model": "mistralai/mistral-7b-instruct",
+            "model": "deepseek/deepseek-chat-v3-0324:free",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.0,
             "max_tokens": 2000
