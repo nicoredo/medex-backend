@@ -7,8 +7,8 @@
         "inclusion": [
           { "tipo": "diagnostico", "condicion": "diabetes tipo 2" },
           { "tipo": "medicacion", "condicion": "insulina glargina" },
-          { "tipo": "laboratorio", "condicion": "HbA1c >= 7 y <= 10.5 %" },
-          { "tipo": "laboratorio", "condicion": "FG < 60 ml/min" }
+          { "tipo": "laboratorio", "condicion": "HbA1c (hemoglogina glicosilada) >= 7 y <= 10.5 %" },
+          { "tipo": "laboratorio", "condicion": "filtrado glomerular< 60 ml/min" }
         ],
         "exclusion": []
       }
@@ -20,11 +20,11 @@
         "inclusion": [
           { "tipo": "diagnostico", "condicion": "hipertension arterial" },
           { "tipo": "medicacion", "condicion": "IECA o ARA II" },
-          { "tipo": "laboratorio", "condicion": "FG entre 30 y 60 ml/min" },
-          { "tipo": "laboratorio", "condicion": "RAC > 30 mg y < 500 mg" }
+          { "tipo": "laboratorio", "condicion": "filtrado glomerular entre 30 y 60 ml/min" },
+          { "tipo": "laboratorio", "condicion": "relacion albuminuria-creatinuria (rac) > 30 mg y < 500 mg" }
         ],
         "exclusion": [
-          { "tipo": "laboratorio", "condicion": "HbA1c > 10.5 %" },
+          { "tipo": "laboratorio", "condicion": "HbA1c (hemoglogina glicosilada)> 10.5 %" },
           { "tipo": "medicacion", "condicion": "diuretico ahorrador de potasio" }
         ]
       }
@@ -57,8 +57,8 @@
           { "tipo": "edad", "condicion": ">½ 45 años" },
           { "tipo": "diagnostico", "condicion": "obesidad con IMC > 27 kg/m2" },
           { "tipo": "diagnostico", "condicion": "enfermedad renal cronica" },
-          { "tipo": "laboratorio", "condicion": "FG > 30 ml/min" },
-          { "tipo": "laboratorio", "condicion": "RAC > 30 mg" }
+          { "tipo": "laboratorio", "condicion": "filtrado glomerula > 30 ml/min" },
+          { "tipo": "laboratorio", "condicion": "relacion albuminuria-creatinuria (rac) > 30 mg" }
         ],
         "exclusion": []
       }
@@ -81,11 +81,11 @@
       "criterios": {
         "inclusion": [
           { "tipo": "diagnostico", "condicion": "hipertension arterial" },
-          { "tipo": "laboratorio", "condicion": "FG entre 30 y 90 ml/min" },
-          { "tipo": "laboratorio", "condicion": "RAC entre 500 y 5000 mg/g" }
+          { "tipo": "laboratorio", "condicion": "filtrado glomerula entre 30 y 90 ml/min" },
+          { "tipo": "laboratorio", "condicion": "relacion albuminuria-creatinuria (rac)  entre 500 y 5000 mg/g" }
         ],
         "exclusion": [
-          { "tipo": "laboratorio", "condicion": "HbA1c > 10.5 %" },
+          { "tipo": "laboratorio", "condicion": "HbA1c (hemoglogina glicosilada)> 10.5 %" },
           { "tipo": "medicacion", "condicion": "diuretico ahorrador de potasio" }
         ]
       }
