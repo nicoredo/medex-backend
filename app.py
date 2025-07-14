@@ -154,3 +154,16 @@ async def consultar_openrouter(prompt):
         raise
 
 
+from fastapi import UploadFile, File
+from docx import Document
+
+@app.post("/subir_word")
+async def subir_word(file: UploadFile = File(...)):
+    contents = await file.read()
+    with open("temp.docx", "wb") as f:
+        f.write(contents)
+
+    doc = Document("temp.docx")
+    texto = "\n".join([p.text for p in doc.paragraphs if p.text.strip()])
+    return {"texto": texto}
+
