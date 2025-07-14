@@ -167,3 +167,18 @@ async def subir_word(file: UploadFile = File(...)):
     texto = "\n".join([p.text for p in doc.paragraphs if p.text.strip()])
     return {"texto": texto}
 
+from fastapi import UploadFile
+import fitz  # PyMuPDF
+
+@app.post("/subir_pdf")
+async def subir_pdf(file: UploadFile = File(...)):
+    contents = await file.read()
+    with open("temp.pdf", "wb") as f:
+        f.write(contents)
+
+    texto = ""
+    with fitz.open("temp.pdf") as doc:
+        for page in doc:
+            texto += page.get_text()
+
+    return {"texto": texto.strip()}
